@@ -3,21 +3,16 @@
 
 void AMPlotMacroCreator_Moriond() {
  
-//  TString fileVar = Form("var19Nov.txt");
-//  TString date    = Form("19Nov_WWewk_Moriond_forAN");
-//  TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
-
- //---- MVA ----
- TString fileVar = Form("var20Nov.txt");
- TString date    = Form("20Nov_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
+ TString fileVar = Form("var19Nov.txt");
+ TString date    = Form("27Nov_WW_Moriond_forAN");
+ TString file    = Form("out_test_Latinos_27Nov2013_2300_RunABCD-WW.root");
  
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
 //  for (int iCut = 0; iCut < 3*1; iCut++) {
   
- for (int iCut = 0; iCut < 3*2; iCut++) {
+ for (int iCut = 0; iCut < 3*3; iCut++) {
      
   TString CommandToExec = Form("rm -r %s_%d",date.Data(),iCut);
   gSystem->Exec(CommandToExec);  
@@ -134,9 +129,9 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " ///==== signal (begin) ====" << std::endl;
    myfile << std::endl;
  
-   myfile << " name = Form(\"%sWW2j%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
+   myfile << " name = Form(\"%sWW%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
    myfile << " vectTHSig.push_back ( (TH1F*) f->Get(name) );" << std::endl;
-   myfile << " vectNameSig.push_back (\"WWewk\");" << std::endl;
+   myfile << " vectNameSig.push_back (\"WW\");" << std::endl;
    myfile << " vectColourSig.push_back(633);" << std::endl;
    myfile << " vectScaleSig.push_back(1.0000);" << std::endl;
    myfile << " vectNormalizationSig.push_back(2.256);" << std::endl;
@@ -261,13 +256,13 @@ void AMPlotMacroCreator_Moriond() {
    
      
    
-   myfile << " name = Form(\"%sWW%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
+   myfile << " name = Form(\"%sWW2j%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
    myfile << " vectTHBkg.push_back ( (TH1F*) f->Get(name) );" << std::endl;
-   myfile << " vectNameBkg.push_back (\"WW\");" << std::endl;
+   myfile << " vectNameBkg.push_back (\"WWewk\");" << std::endl;
    myfile << " vectColourBkg.push_back(851);" << std::endl;
-   myfile << " vectSystBkg.push_back(0.50);" << std::endl;    //--- 50% error
-   myfile << " vectScaleBkg.push_back(2.0000);" << std::endl; //--- x2 !
-   myfile << " vectNormalizationBkg.push_back(2.256);" << std::endl;
+   myfile << " vectSystBkg.push_back(0.20);" << std::endl;    //--- 50% error
+   myfile << " vectScaleBkg.push_back(1.0000);" << std::endl; //--- x2 !
+   myfile << " vectNormalizationBkg.push_back(1.000);" << std::endl;
    
    myfile << std::endl;
    myfile << " name = Form(\"%sVVV%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;

@@ -19,30 +19,32 @@
 #
 #  @WW level
 #
-#  && mjj>200
-#  && mll>50
-#
-1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  && mll>50 && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
-sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  && mll>50 && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
-(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  && mll>50 && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5     
 #
 ##################
 #
 #  @WW level
 #
-#  && mjj>500   --> >700 is too tight!
-#  && detajj>2.0
-#  <---- no ---->  && mll>70  -----> needed!!!
-#  && (!sameflav || pfmet > 80.0)
-#  && pfmet>20
-#  && mpmet>20 ---> it really suppresses DYtt!
-#  && jetpt1>50
-#  && jetpt2>50
-#  && njetvbf==0
+#  + mth>40    -> removes DYtt in of and harmless in sf
+#  + jetbjpb1<0.2 && jetbjpb2<0.2
 #
-1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2      
-sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
-(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2
+#
+##################
+#
+#  @WW level
+#
+#  + mll>70 GeV  --> Higgs removal!
+#  
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2   && mll>70
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2   && mll>70
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  &&  trigger==1.  && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2    && abs(jeteta1)<2.5    && abs(jeteta2)<2.5   && mth>40  && jetbjpb1<0.2 && jetbjpb2<0.2   && mll>70
 #
 ##################
 #
