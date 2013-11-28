@@ -12,23 +12,23 @@ pt2          0   100     10        lep-p_{T}-2
 #
 #########################################################
 #
-jetpt1          0   300     10        jet-p_{T}-1
+# jetpt1          0   300     10        jet-p_{T}-1
 #
 #########################################################
 #
-jetpt2          0   150     10        jet-p_{T}-2
+# jetpt2          0   150     10        jet-p_{T}-2
 #
 #########################################################
 #
-mjj            200  1000     20        M_{jet-jet}
+# mjj            200  1000     20        M_{jet-jet}
 #
 #########################################################
 #
-detajj          0   6     12        #Delta#eta_{jet-jet}
+# detajj          0   6     12        #Delta#eta_{jet-jet}
 #
 #########################################################
 #
-mth            0    400      25      m_{T}-{higgs}
+# mth            0    400      25      m_{T}-{higgs}
 #
 #########################################################
 #
@@ -36,32 +36,32 @@ mll          0   200     20        M_{ll}
 #
 #########################################################
 #
-drll          0   5     10          #Delta-R_{lep-lep}
+# drll          0   5     10          #Delta-R_{lep-lep}
 #
 #########################################################
 #
-njet          0   5     5        n_{jet}
+# njet          0   5     5        n_{jet}
 #
 #########################################################
 #
-pfmet        0  200   20        pfmet
+# pfmet        0  200   20        pfmet
 #
 #########################################################
 #
-jetbjpb1     0    3    10        jetbjpb1
-jetbjpb2     0    3    10        jetbjpb2
+# jetbjpb1     0    3    10        jetbjpb1
+# jetbjpb2     0    3    10        jetbjpb2
 #
 #########################################################
 #
-ptll          0   200     40          ptll
+ptll          0   200     20          ptll
 #
 #########################################################
 #
-njet          0    5     5          njet
+# njet          0    5     5          njet
 #
 #########################################################
 #
-log(mjj)     5     8     20        logM_{jet-jet}
+# log(mjj)     5     8     20        logM_{jet-jet}
 #
 #########################################################
 #
@@ -69,9 +69,42 @@ log(mjj)     5     8     20        logM_{jet-jet}
 #
 #########################################################
 #
-abs(eta1-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
-abs(eta2-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
-abs(yll-(jeteta1+jeteta2)/2)/detajj      0      2        10     centralityll
+# min_i DR l1-jet_i
+# min_i DR l2-jet_i
+# min_k (min_i DR lk-jet_i)
+#
+# sqrt(min(((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1),((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1)))           0    4    20        minDRl1j
+# sqrt(min(((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2),((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2)))           0    4    20        minDRl2j
+# min(sqrt(min(((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1),((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1))),sqrt(min(((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2),((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2))))            0    4    20        min-minDRl1j
+#
+# mjj with lep and jet min_k (min_i DR lk-jet_i)
+#
+sqrt(2)*sqrt(((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1))<(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1)))*(2*pt1*jetpt1*(cosh(eta1-jeteta1)-cos(phi1-jetphi1)))+((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1))>(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1)))*(2*pt1*jetpt2*(cosh(eta1-jeteta2)-cos(phi1-jetphi2))))        0     500   30        M_{jetk-l1}
+sqrt(2)*sqrt(((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2))<(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2)))*(2*pt2*jetpt1*(cosh(eta2-jeteta1)-cos(phi2-jetphi1)))+((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2))>(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2)))*(2*pt2*jetpt2*(cosh(eta2-jeteta2)-cos(phi2-jetphi2))))        0     500   30        M_{jetk-l2}
+#
+# ratio
+#
+sqrt(((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1))<(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1)))*(2*pt1*jetpt1*(cosh(eta1-jeteta1)-cos(phi1-jetphi1)))+((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))+abs(jeteta1-eta1)*abs(jeteta1-eta1))>(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))+abs(jeteta2-eta1)*abs(jeteta2-eta1)))*(2*pt1*jetpt2*(cosh(eta1-jeteta2)-cos(phi1-jetphi2))))/sqrt(((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2))<(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2)))*(2*pt2*jetpt1*(cosh(eta2-jeteta1)-cos(phi2-jetphi1)))+((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))+abs(jeteta1-eta2)*abs(jeteta1-eta2))>(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))+abs(jeteta2-eta2)*abs(jeteta2-eta2)))*(2*pt2*jetpt2*(cosh(eta2-jeteta2)-cos(phi2-jetphi2))))        0     3   40        ratio-M_{jetk-l}
+#
+#
+#
+#
+# mjj with lep and jet min_k (min_i Dphi lk-jet_i)
+#
+sqrt(2)*sqrt(((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1))))<(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))))*(2*pt1*jetpt1*(cosh(eta1-jeteta1)-cos(phi1-jetphi1)))+((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1))))>(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))))*(2*pt1*jetpt2*(cosh(eta1-jeteta2)-cos(phi1-jetphi2))))        0     500   20        M_{jetk-l1}
+sqrt(2)*sqrt(((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2))))<(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))))*(2*pt2*jetpt1*(cosh(eta2-jeteta1)-cos(phi2-jetphi1)))+((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2))))>(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))))*(2*pt2*jetpt2*(cosh(eta2-jeteta2)-cos(phi2-jetphi2))))        0     500   20        M_{jetk-l2}
+#
+#
+# mjj with lep and jet min_k (max_i Dphi lk-jet_i)
+#
+sqrt(2)*sqrt(((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1))))>(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))))*(2*pt1*jetpt1*(cosh(eta1-jeteta1)-cos(phi1-jetphi1)))+((((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1)))*((abs(jetphi1-phi1)>3.14159265)*(2*3.14159265-abs(jetphi1-phi1))+(abs(jetphi1-phi1)<3.14159265)*(abs(jetphi1-phi1))))<(((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))*((abs(jetphi2-phi1)>3.14159265)*(2*3.14159265-abs(jetphi2-phi1))+(abs(jetphi2-phi1)<3.14159265)*(abs(jetphi2-phi1)))))*(2*pt1*jetpt2*(cosh(eta1-jeteta2)-cos(phi1-jetphi2))))        0     500   20        M_{jetk-l1}
+sqrt(2)*sqrt(((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2))))>(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))))*(2*pt2*jetpt1*(cosh(eta2-jeteta1)-cos(phi2-jetphi1)))+((((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2)))*((abs(jetphi1-phi2)>3.14159265)*(2*3.14159265-abs(jetphi1-phi2))+(abs(jetphi1-phi2)<3.14159265)*(abs(jetphi1-phi2))))<(((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))*((abs(jetphi2-phi2)>3.14159265)*(2*3.14159265-abs(jetphi2-phi2))+(abs(jetphi2-phi2)<3.14159265)*(abs(jetphi2-phi2)))))*(2*pt2*jetpt2*(cosh(eta2-jeteta2)-cos(phi2-jetphi2))))        0     500   20        M_{jetk-l2}
+#
+#
+#
+# abs(eta1-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
+# abs(eta2-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
+# abs(yll-(jeteta1+jeteta2)/2)/detajj      0      2        10     centralityll
 #
 #########################################################
 #
