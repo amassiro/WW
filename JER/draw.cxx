@@ -9,8 +9,10 @@
  
  TCanvas* cc[10];
  for (int i=0; i<5; i++) {
-  cc[i] = new TCanvas ("","",800,600);
+  TString ccName = Form ("cc_%d",i);
+  cc[i] = new TCanvas (ccName.Data(),"",800,600);
   TString cut = Form ("dR<0.05 && abs(genJetEta) > %f && abs(genJetEta) <= %f",min[i],max[i]);
+  std::cout << " cut = " << cut << std::endl;
   jetres->Draw("recoJetPt/genJetPt >> histo",cut.Data());
   histo->Fit("gaus","RQ");
   std::cout << " sigma = " << gaus->GetParameter (2) / gaus->GetParameter (1) << " +/- " << gaus->GetParError (2) / gaus->GetParameter (1) << std::endl;
