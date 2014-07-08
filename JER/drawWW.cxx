@@ -4,7 +4,19 @@
  
  double min[10] = {0.0, 0.5, 1.1, 1.7, 2.3};
  double max[10] = {0.5, 1.1, 1.7, 2.3, 5.0};
- double c[10]   = {1.052, 1.057, 1.096, 1.134, 1.288};
+ 
+//  https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetResolution
+//  double c[10]   = {1.052, 1.057, 1.096, 1.134, 1.288};
+ 
+ //---- for JER nuisance
+//  double c_down[10]   = {0.990, 1.001, 1.032, 1.042, 1.089 };
+//  double c_down[10]   = {1.000, 1.001, 1.032, 1.042, 1.089 };  //--> fix the first to 1, otherwise unphysical
+//  double c_up[10]     = {1.115, 1.114, 1.161, 1.228, 1.488 };
+ 
+
+//  double c[10]   = {1.000, 1.001, 1.032, 1.042, 1.089 }; //---- down
+ double c[10]     = {1.115, 1.114, 1.161, 1.228, 1.488 }; //---- up
+ 
  
  TCanvas* cc[10];
  for (int i=0; i<5; i++) {
